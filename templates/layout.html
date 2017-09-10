@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <table border="6" color='white' style="width:100%">
+        <tr>
+        {% for key in sql_list[0] %}
+            <th> {{ key }} </th>
+        {% endfor %}
+        </tr>
+        {% for list in sql_list %}
+            <tr>
+                {% for key in sql_list[0] %}
+                    <td>{{ list[key] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
