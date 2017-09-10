@@ -16,7 +16,7 @@
         {% for list in sql_list %}
             <tr>
                 {% for key in sql_list[0] %}
-                    <td>{{ list[key] }}</td>
+                    <td>{% if list[key] == None %} No Data {% else %} {{ list[key] }} {% endif %}</td>
                 {% endfor %}
             </tr>
         {% endfor %}

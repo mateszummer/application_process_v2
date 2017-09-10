@@ -39,6 +39,11 @@ def applicants():
     sql_list = sql_quaries.applicants()
     return render_template('applicants.html', sql_list=sql_list)
 
+@app.route('/applicants-and-mentors')
+def applicants_and_mentors():
+    sql_list = sql_quaries.applicants_and_mentors()
+    return render_template('applicants_and_mentors.html', sql_list=sql_list)
+
 if __name__ == "__main__":
     app.secret_key = 'errenincsisszükségám'
     app.run(debug=True, port=5031)
