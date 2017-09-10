@@ -4,7 +4,7 @@ import sql_connection
 class sql_handler:
     string_to_exe = ""
     @sql_connection.connection_handler
-    def quarie(cursor,self):
+    def query(cursor,self):
         cursor.execute(self.string_to_exe)
         result = cursor.fetchall()
         return result
