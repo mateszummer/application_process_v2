@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, session
-import sql_quaries
+import sql_handler
 
 
 app = Flask(__name__)
@@ -12,36 +12,36 @@ def route_list():
 
 @app.route('/mentors')
 def mentors():
-    sql_list = sql_quaries.mentors_schools()
+    sql_list = sql_handler.mentors_schools.quarie()
     return render_template('mentors.html', sql_list=sql_list)
 
 
 @app.route('/all-school')
 def all_school():
-    sql_list = sql_quaries.all_school()
+    sql_list = sql_handler.all_school.quarie()
     return render_template('all_school.html', sql_list=sql_list)
 
 
 @app.route('/Mentors-by-country-page')
 def mentors_by_country():
-    sql_list = sql_quaries.mentors_by_country()
+    sql_list = sql_handler.mentors_by_country.quarie()
     return render_template('mentors_by_country.html', sql_list=sql_list)
 
 
 @app.route('/contacts')
 def contacts():
-    sql_list = sql_quaries.contacts()
+    sql_list = sql_handler.contacts.quarie()
     return render_template('contacts.html', sql_list=sql_list)
 
 
 @app.route('/applicants')
 def applicants():
-    sql_list = sql_quaries.applicants()
+    sql_list = sql_handler.applicants.quarie()
     return render_template('applicants.html', sql_list=sql_list)
 
 @app.route('/applicants-and-mentors')
 def applicants_and_mentors():
-    sql_list = sql_quaries.applicants_and_mentors()
+    sql_list = sql_handler.applicants_and_mentors.quarie()
     return render_template('applicants_and_mentors.html', sql_list=sql_list)
 
 if __name__ == "__main__":
