@@ -1,12 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    {% block head %}
     <title>{% block title %}{% endblock %}</title>
-    {% endblock %}
   </head>
   <body>
-    <div id="content">{% block content %}{% endblock %}</div>
+    <h1>{% block h1 %}{% endblock %}</h1>
     <table border="6" color='white' style="width:100%">
         <tr>
         {% for key in sql_list[0] %}
